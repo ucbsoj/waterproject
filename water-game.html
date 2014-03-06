@@ -120,15 +120,20 @@
 							//on click, this will generate two new graphs--one showing the right answer and one showing other people's answers--ask JRue how to store the clicked value as a variable that I can use later.
 							.on('click', showAnswer);
 
+						var xAxis2 = d3.svg.axis()
+              .scale(xScale2)
+              .orient("top")
+              .ticks(10);
+
             svg2.append("g")
             	.attr("class", "axis")
-    					.call(xAxis);
+    					.call(xAxis2);
 
     			//defining the function that happens on a click
     				function showAnswer(){
     					d3.select("#answer")
     						.append("text")
-    						.text("Answer: Seven Gallons");
+    						.text("Answer: Five Gallons");
 
     					var svg3 = d3.select("#d3-3").append("svg")
 	            	.attr("width", width + margin.left + margin.right)
@@ -149,7 +154,7 @@
 
 			  			svg3.append("g")
 	            	.attr("class", "axis")
-	    					.call(xAxis);
+	    					.call(xAxis2);
 
 						};
 
