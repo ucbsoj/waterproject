@@ -31,16 +31,21 @@
 		</style>
     </head>
     <body>
+    	<div id="d3-1"></div>
+    	<div id="d3-2">
+    		<h2>A three minute shower uses how many gallons?</h2></div>
+    	<h2 id="answer"></h2>
+    	<div id="d3-3"></div>
         <script type="text/javascript">
 
         	//Margin conventions
             var margin = {top: 20, right: 20, bottom: 20, left: 20};
     				var padding = {top: 60, right: 60, bottom: 60, left: 60};
             var width = 900 - margin.left - margin.right - padding.left - padding.right; 
-            var height = 600 - margin.top - margin.bottom - padding.top - padding.right;
+            var height = 200 - margin.top - margin.bottom - padding.top - padding.right;
 
           //Draw the initial SVG
-          	var svg = d3.select("body").append("svg")
+          	var svg1 = d3.select("#d3-1").append("svg")
             	.attr("width", width + margin.left + margin.right)
               .attr("height", height + margin.top + margin.bottom)
               .append("g")
@@ -62,7 +67,7 @@
 						 .range([0, width]);
 					
 					//sexy piece of code that joins our complex svg data to the dataset--d3 is amazing!!
-						var svgPaths = svg.selectAll('path')
+						var svgPaths = svg1.selectAll('path')
 							.data(dataset)
 							.enter()
 		      		.append('path')
@@ -77,9 +82,77 @@
               .orient("top")
               .ticks(10);
 
-            svg.append("g")
+            svg1.append("g")
             	.attr("class", "axis")
     					.call(xAxis);
+
+    	//another potential for the format
+    				var svg2 = d3.select("#d3-2").append("svg")
+            	.attr("width", width + margin.left + margin.right)
+              .attr("height", height + margin.top + margin.bottom)
+              .append("g")
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+						//this one has fixed values the user can choose
+						var dataset2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+						var xScale2 = d3.scale.linear()
+						 .domain([0, d3.max(dataset2, function(d) { return d; })])
+						 .range([0, width]);
+
+						var svgPaths = svg2.selectAll('path')
+							.data(dataset2)
+							.enter()
+		      		.append('path')
+							.attr("d", paths[0].d)
+		  				.style("stroke", paths[0].stroke)
+		  				.style("fill", paths[0].fill)
+		  				.attr("transform", function(d){return 'translate('+ (xScale2(d)-14) + ')'})
+		  				.on('mouseover',function() {
+  							d3.select(this)
+    						.style("fill", 'rgba(105,159,213,1)')
+							})
+							//highlights when you mouseover so users can see that it's clickable. (yay!)
+							.on('mouseout', function() {
+								d3.select(this)
+    						.style("fill", 'rgba(105,159,213,.4)')
+							})
+							//on click, this will generate two new graphs--one showing the right answer and one showing other people's answers--ask JRue how to store the clicked value as a variable that I can use later.
+							.on('click', showAnswer);
+
+            svg2.append("g")
+            	.attr("class", "axis")
+    					.call(xAxis);
+
+    			//defining the function that happens on a click
+    				function showAnswer(){
+    					d3.select("#answer")
+    						.append("text")
+    						.text("Answer: Seven Gallons");
+
+    					var svg3 = d3.select("#d3-3").append("svg")
+	            	.attr("width", width + margin.left + margin.right)
+	              .attr("height", height + margin.top + margin.bottom)
+	              .append("g")
+	              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+	            var rightAnswer = [5]
+
+	            var svgPaths = svg3.selectAll('path')
+								.data(rightAnswer)
+								.enter()
+			      		.append('path')
+								.attr("d", paths[0].d)
+			  				.style("stroke", paths[0].stroke)
+			  				.style("fill", paths[0].fill)
+			  				.attr("transform", function(d){return 'translate('+ (xScale2(d)-14) + ')'});
+
+			  			svg3.append("g")
+	            	.attr("class", "axis")
+	    					.call(xAxis);
+
+						};
+
 
         </script>
     </body>
