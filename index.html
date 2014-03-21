@@ -12,8 +12,7 @@
 	 *  To create a new section, add the necessary HTML and CSS file names to this variable.
 	 */
 	 var sections = [
-	 	{name: "opening", html: "opening.html", css: "css/opening.css", related: ""},
-
+	 	{name: "opening", html: "opening.html", css: "css/opening.css", related: ""}
 	 ];
 
 	 jQuery(document).ready(function($) {
@@ -21,6 +20,7 @@
 	 	$.each(sections, function(item, elm){
 
 	 		var $section = $('<section />').appendTo('body').attr('id', elm.name);
+	 		var timestamp = new Date().getTime();;
 
 	 		$.ajax({
 	 			url      : elm.html,
@@ -30,9 +30,8 @@
 	 		})
 
 	 		if('css' in elm){
-	 			$('head').append('<link href="' + elm.css + '" rel="stylesheet" >');
+	 			$('head').append('<link href="' + elm.css + '?' + timestamp + '" rel="stylesheet" >');
 	 		}
-	 		
 
 	 	})
 	 });
