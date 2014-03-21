@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Fixing the Water Crisis</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+  <style type="text/css" media="screen">
+    body{
+      margin:0;
+    }
+
+
+    video{
+      position:fixed;
+      left: 0px;
+      top: 0px;
+      min-height:100%;
+    }
+
+    #title-text{
+      position:fixed;
+      left: 60%;
+      font-family: Helvetica, sans-serif;
+      font-size: 90px;
+      color: #ffffff;
+    }
+
+    .solutions{
+      z-index: 2000;
+      position: fixed;
+      top: 0%;
+      right: 0%;
+    }
+
+    .solutions-left{
+      z-index: 2000;
+      position: fixed;
+      top: 0%;
+      left: 0%;
+    }
+
+    .solutions-text{
+      position: fixed;
+      left: 5%;
+      top: 10%;
+      width: 30%;
+      z-index: 1;
+      color: #ffffff;
+      font-size: 2em;
+      letter-spacing: 2px;
+      z-index: 3000;
+    }
+
+  /*setting width and height for photo row so backstretch will work nicely with bootstrap*/
+    .photo-row{
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+    }
+
+    .photo-wide{
+      width:100%; 
+      height:100%;
+      margin:auto;
+      display:block;
+    }
+
+
+
+  </style>
+</head>
+<body>
+<div>
+  <video class="myvideo" 
+    data-0="opacity:1;"
+    data-700="opacity:1;" 
+    data-900="opacity:0;" 
+    src="assets/vids/water-drop.mp4" 
+    width="100%" 
+    height="auto">
+  </video>
+</div>
+
+  <div class="solutions" 
+    data-0="opacity:1;" 
+    data-700="opacity:1; transform[quadratic]:rotateZ(0deg); right[quadratic]:0%;"
+    data-900="opacity:0; transform[quadratic]:rotateZ(100deg); right[quadratic]:-40%;">
+    <img src="assets/img/intro-text.png">
+  </div>
+
+  <div class="solutions-left"
+    data-700="opacity:0;" 
+    data-900="opacity:0; transform[quadratic]:rotateZ(-100deg); left[quadratic]:-40%;"
+    data-1000="opacity:1; transform[quadratic]:rotateZ(0deg); left[quadratic]:0%;"
+    data-1200="opacity:1; transform[quadratic]:rotateZ(0deg); left[quadratic]:0%;"
+    data-1300="opacity:0; transform[quadratic]:rotateZ(-100deg); left[quadratic]:-40%;">
+    <img src="assets/img/graywatertext.png">
+  </div>
+
+  <div class="solutions"
+    data-1200="opacity:0; transform[quadratic]:rotateZ(100deg); right[quadratic]:-40%;"
+    data-1400="opacity:1; transform[quadratic]:rotateZ(0deg); right[quadratic]:0%;">
+    <img src="assets/img/text1.png">
+  </div>
+
+
+  
+  <div class="row photo-row"
+    data-700="opacity:0;"
+    data-900="opacity:1;"
+    data-1400="opacity:1;"
+    data-1900="opacity:0;">
+    <div class="col-md-12 photo-wide gray-water">
+    </div>
+  </div> <!--end of row-->
+
+ 
+ 
+
+  <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <!-- skrollr -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.11/skrollr.min.js" type="text/javascript" charset="utf-8"></script>
+  <!-- bootstrap -->
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <!-- backstretch -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+
+  <script type="text/javascript" charset="utf-8">
+
+    //backstretch for images//
+    $(".gray-water").backstretch("assets/img/graywater.png");
+    $(".atoll-three").backstretch("assets/img/atoll-three.jpg");
+    $(".atoll-four").backstretch("assets/img/atoll-four.jpg");
+    $(".atoll-five").backstretch("assets/img/atoll-five.jpg");
+    $(".data-viz").backstretch("assets/img/blue-background.jpg");
+  
+    //get reference to video by the id
+    var myVid = document.getElementsByTagName('video');
+  
+    var s = skrollr.init({
+        render: function(data) {
+            //iterates through the Elements to get all the videos
+            for (var i = 0; i < myVid.length; ++i) {
+            //if the video has a class name "between" or "after", play video--skrollr automatically adds classes to elements when they are in view.
+              if(myVid[i].className.match(/between|after/gi)){
+                myVid[i].play();
+              } else {
+                myVid[i].pause();
+              }
+            }
+            
+        }
+
+    });
+
+
+
+  </script>
+</body>
+</html>
