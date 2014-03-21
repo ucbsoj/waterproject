@@ -12,7 +12,7 @@
 	 *  To create a new section, add the necessary HTML and CSS file names to this variable.
 	 */
 	 var sections = [
-	 	{html: "opening.html", css: "css/opening.css", related: ""},
+	 	{name: "opening", html: "opening.html", css: "css/opening.css", related: ""},
 
 	 ];
 
@@ -20,7 +20,7 @@
 	 	
 	 	$.each(sections, function(item, elm){
 
-	 		var $section = $('<section />').appendTo('body');
+	 		var $section = $('<section />').appendTo('body').attr('id', elm.name);
 
 	 		$.ajax({
 	 			url      : elm.html,
