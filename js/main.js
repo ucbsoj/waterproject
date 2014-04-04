@@ -8,5 +8,7 @@ VimeoEmbed.init = function(e) {
     });
 };
 
+
+
 //On document ready
 $(document).ready(VimeoEmbed.init);
