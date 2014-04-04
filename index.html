@@ -6,6 +6,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet" />
 	<script src="js/jquery-2.0.2.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="http://a.vimeocdn.com/js/froogaloop2.min.js" type="text/javascript"></script>
 	<script>
 
 	/*
@@ -13,13 +14,13 @@
 	 */
 	 var sections = [
 	 	{name: "opening",  html: "opening.html",  css: "css/opening.css", related: ""},
-	 	{name: "forest" ,  html: "forest.html" ,  css: "css/forest.css" , related: ""},
-	 	{name: "history",  html: "history.html" , css: "css/history.css", related: ""},
-	 	{name: "crops",    html: "crops.html" ,   css: "css/crops.css",   related: ""}
+	 	{name: "forest",   html: "forest.html",   css: "css/forest.css",  related: ""},
+	 	{name: "history",  html: "history.html",  css: "css/history.css", related: ""},
+	 	{name: "crops",    html: "crops.html",    css: "css/crops.css",   related: ""}
 	 ];
 
 	 jQuery(document).ready(function($) {
-	 	
+
 	 	$.each(sections, function(item, elm){
 
 	 		var $section = $('<section />').appendTo('body').attr('id', elm.name);
@@ -36,11 +37,13 @@
 	 			$('head').append('<link href="' + elm.css + '?' + timestamp + '" rel="stylesheet" >');
 	 		}
 
-	 	})
+	 	});
 	 });
 	</script>
 </head>
 <body>
 
+<!-- custom js -->
+<script src="js/main.js"></script>
 </body>
 </html>
