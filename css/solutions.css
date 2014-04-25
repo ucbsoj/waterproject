@@ -1,0 +1,164 @@
+.header-third{
+	width: 33%;
+	float: left;
+	background-color: #c5c7c6;
+}
+
+#city{
+	border-right: 2px dashed #e0e0e0;
+}
+
+#toilet{
+	border-left: 2px dashed #e0e0e0;
+}
+
+#wishyWashy {
+	margin: 0 33%;
+	width: 34%;
+	padding-top: 6%;
+	padding-bottom: 6%;
+}
+
+#washing:hover #water {
+    -webkit-animation: swish 1s infinite;
+    -webkit-transform:rotate(45deg);
+    -webkit-transform-origin:98% 145%;
+}
+
+@-webkit-keyframes swish
+{
+    0% {-webkit-transform:rotate(45deg);}
+    50% {-webkit-transform:rotate(-45deg);}
+    100% {-webkit-transform:rotate(45deg);}
+}
+
+#cityLighty {
+	margin: 0 10%;
+	width: 80%;
+	padding-top: 6%;
+	padding-bottom: 6%;
+}
+
+#city:hover #g1{
+        -webkit-animation: lights1 1s;
+        -webkit-animation-fill-mode: forwards;
+        fill: rgba(255,255,255,0);
+    }
+    
+    @-webkit-keyframes lights1
+    {
+        0%   {fill: rgba(255,255,255,0);}
+		100%  {fill: rgba(239, 200, 32, 1);}
+    }
+
+#city:hover #g2{
+    	-webkit-animation: lights2 1s;
+    	-webkit-animation-delay: 1s;
+    	-webkit-animation-fill-mode: forwards;
+    	fill: rgba(255,255,255,0);
+    }
+    
+    @-webkit-keyframes lights2
+    {
+        0%   {fill: rgba(255,255,255,0);}
+		100%  {fill: rgba(239, 200, 32, 1);}
+    }
+    
+#city:hover #g3{
+    	-webkit-animation: lights3 1s;
+    	-webkit-animation-delay: 2s;
+    	-webkit-animation-fill-mode: forwards;
+    	fill: rgba(255,255,255,0);
+    }
+    
+    @-webkit-keyframes lights3
+    {
+        0%   {fill: rgba(255,255,255,0);}
+		100%  {fill: rgba(239, 200, 32, 1);}
+    }
+    
+
+#city:hover #g4{
+    	-webkit-animation: lights4 1s;
+    	-webkit-animation-delay: 3s;
+    	-webkit-animation-fill-mode: forwards;
+    	fill: rgba(255,255,255,0);
+    }
+    
+    @-webkit-keyframes lights4
+    {
+        0%   {fill: rgba(255,255,255,0);}
+		100%  {fill: rgba(239, 200, 32, 1);}
+    }
+
+#toiletFlushy {
+	margin: 0 33%;
+	width: 33%;
+	padding-top: 6%;
+	padding-bottom: 6%;
+}
+
+#toilet:hover #flush{
+        -webkit-animation: swish 2s infinite;
+        -webkit-transform:rotate(45deg);
+        -webkit-transform-origin:50% 28%;
+    }
+        
+        @-webkit-keyframes swish
+        {
+            0% {-webkit-transform:rotate(45deg);}
+            50% {-webkit-transform:rotate(-45deg);}
+            100% {-webkit-transform:rotate(45deg);}
+        }
+        
+#toilet:hover #lid{
+	    -webkit-animation: swing 10s infinite;
+	    -webkit-transform:rotate(80deg);
+	    -webkit-transform-origin:100% 50%;
+   }
+
+  @-webkit-keyframes swing
+   {
+	    0% {-webkit-transform:rotate(50deg);}
+	    50% {-webkit-transform:rotate(0deg);}
+	    100% {-webkit-transform:rotate(50deg);}
+   }
+
+#city-info {
+	width:100%;
+	height: auto;
+	background-color: #e0e0e0;
+	clear: both;
+}
+
+#leaky-pipe {
+	display: inline-block;
+	width: 33%;
+}
+
+#leaky-text{
+	float:right;
+	width: 66%;
+}
+
+#leaky-header{
+	color: #ae4425;
+	font-family: Lato, Helvetica, sans-serif;
+	font-size: 45px;
+	text-align: center;
+}
+
+.leaky-graf{
+	color: #505b51;
+	font-family: Lato, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+#leaky-pull{
+	color: #ae4425;
+	font-family: Lato, Helvetica, sans-serif;
+	font-size: 20px;
+	text-align: center;
+	line-height: 100%;
+	padding: 2%;
+}
