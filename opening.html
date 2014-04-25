@@ -2,11 +2,35 @@
 <div class="container-fluid">
     <div class="covers" id="cover-1">
         <div id="cover-title-1">
-            <h1>California drought</h1>
-            <p>How much water could a water truck truck if a water truck could truck water?</p>
+            <h1>California's Droughts</h1>
+            <p>Let's dive in to understand some key part of the California drought.</p>
         </div>
-    <div class="vimeo">
-        <iframe src="//player.vimeo.com/video/91003876?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    </div>
+        <div class="vimeo">
+            <div class="videocover">
+                <iframe id="opening_video" src="//player.vimeo.com/video/91003876?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
 </div>
+<script type="text/javascript">
+jQuery(document).ready(function($){
+
+
+    $(window).on('load resize', function(){
+        var w_height = $(window).height();
+        var w_width  = $(window).width();
+
+        if((w_height * 16 / 9) > w_width){
+            $('#opening_video').css({
+                height : w_height, 
+                width : (w_height * 16 / 9)
+            });
+        } else {
+            $('#opening_video').css({
+                height : (w_width * 9 / 16), 
+                width : w_width
+            });
+        }      
+    });
+});
+</script>
