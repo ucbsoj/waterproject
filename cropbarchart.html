@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <style type="text/css">
+        .axis text {
+          font: 10px sans-serif;
+        }
+
+        .axis path,
+        .axis line {
+          fill: none;
+          stroke: #000;
+          shape-rendering: crispEdges;
+        }
+
+		.d3-tip {
+		  line-height: 1;
+		  font-weight: bold;
+		  padding: 12px;
+		  background: rgba(0, 0, 0, 0.8);
+		  color: #fff;
+		  border-radius: 2px;
+		}
+    </style>
+</head>
+<body>
+
+	<div id="chart"></div>
+
+	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+	<script>
+
+    var info = [
+        {name: "Walnuts",   value:546546}, 
+        {name: "Almonds",   value:456455},
+        {name: "Cherries",  value:345344},
+        {name: "Tomatoes",  value:335235},
+        {name: "Lettuce",  value:245235},
+        {name: "Broccoli",  value:135735},
+        {name: "Cauliflower",  value:45235},
+        {name: "Spinach",  value:644235},
+
+    ];
+
+    /* Set chart dimensions */
+    var width   = 960, 
+        height  = 500,
+        margin  = {top:10, right:10, bottom:20, left:60};
+        
+    	//subtract margins
+    	width  = width  - margin.left - margin.right;
+    	height = height - margin.top  - margin.bottom;
+
+    	//sort data from highest to lowest
+    	info = info.sort(function(a, b){ return b.value - a.value; });
+
+    //Sets the y scale from 0 to the maximum data element
+    var y = d3.scale.linear()
+        .domain([0, d3.max( info, function(d){return d.value;} )])
+        .range([height, 0])
+        .nice();
+
+    //Sets the x scale. Uses ordinal based on name property, so x("walnuts") will return location
+    var x = d3.scale.ordinal()
+        .domain( info.map(function(d){return d.name;}) )
+        .rangeRoundBands([0, width], .1);
+
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom")
+        .outerTickSize(0);
+
+    var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left")
+        .outerTickSize(0);
+	
+	var tip = d3.tip()
+		.attr('class', 'd3-tip')
+		.offset([-1, 0])
+		.html(function(d) {
+			return "<strong>Value:</strong> <span style='color:red'>" + d.info.value + "</span>";
+		})
+		
+	var svg = d3.select("body").append("svg")
+		 .attr("width", width + margin.left + margin.right)
+		 .attr("height", height + margin.top + margin.bottom)
+		 .append("g")
+		 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	
+	svg.call(tip);
+
+    var svg = d3.select("#chart")
+        .append("svg")
+        .attr("width", "100%")
+        .attr("height", "100%")
+        .attr('preserveAspectRatio', 'xMidYMin')
+        .attr("viewBox", '0 0 ' + parseInt(width + margin.left + margin.right) + ' ' + parseInt(height + margin.top + margin.bottom))
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	
+	svg.selectAll('.databars')
+	   .data(info)
+	   .enter()
+	   .append('rect')
+	   .attr('class', 'databars')
+	   .attr('fill', 'steelblue')
+	   .attr('x', function(d){ return x(d.name);})
+       .attr('width',   function(d){ return x.rangeBand(); })
+       .attr('y',       function(d){ return height; /*y(d.value); */ })
+       .attr('height',  function(d){ return 0; /*height - y(d.value);*/});
+	
+	// 	on click when you choose bars
+	svg.selectAll('.yourpick')
+       .data(info)
+       .enter()
+	   .append('rect')
+	   .attr('class', 'yourpick')
+	   .attr('fill', '#000000')
+	   .style('opacity', 0.3)
+	   .attr('x',       function(d){ return x(d.name); })
+       .attr('width',   function(d){ return x.rangeBand(); })
+       .attr('y',       function(d){ return height; /*y(d.value); */ })
+       .attr('height',  function(d){ return 0; /*height - y(d.value);*/});
+
+    svg.selectAll('.backgroundbars')
+       .data(info)
+       .enter()
+       .append('rect')
+       .attr('fill', '#ffffff')
+       .attr('stroke', 'black')
+	   .style('fill-opacity', '0')
+       .attr('x',       function(d){ return x(d.name); })
+       .attr('width',   function(d){ return x.rangeBand(); })
+       .attr('y',       function(d){ return 0; /*y(d.value); */ })
+       .attr('height',  function(d){ return height; /*height - y(d.value);*/})
+       .on('click', function(d, i){
+	        console.log(d3.selectAll('.databars')[0][i])
+			
+      d3.select(d3.selectAll('.databars')[0][i])
+			   .attr('y', height)
+			   .attr('height', 0)
+			   .transition()
+			   .duration(800)
+			   .attr('y', y(d.value))
+			   .attr('height', height - y(d.value))
+			   // this detects the end of animation
+			   .each('end', function(){
+					 d3.select(this).on('mouseover', tip.show)
+					 d3.select(this).on('mouseout', tip.hide);
+					// svg.append('text')
+					// 						.attr('x', x(d.name) + 20)
+					// 						.attr('y', y(d.value) + 50)
+					// 						.text(d.value);
+			});
+
+			d3.select(this).on('click', null);
+			d3.select(this).on('mousemove', null);
+			d3.select(this).on('mouseout', null);
+		})
+		.on('mousemove', function(d,i){
+			//console.log(this)
+			
+			d3.select(d3.selectAll('.yourpick')[0][i])
+			  .attr('y', d3.mouse(this)[1])
+			  .attr('height', height - d3.mouse(this)[1]) 
+		})
+		.on('mouseout', function(d,i){
+			d3.select(d3.selectAll('.yourpick')[0][i])
+			  .attr('y', height)
+			  .attr('height', 0)
+			
+		});
+
+
+			
+    //attach axes
+    svg.append('g')
+       .attr('class', 'x axis')
+       .attr('transform', 'translate(0, ' + (height) + ')')
+       .call(xAxis);
+
+    svg.append('g')
+       .attr('class', 'y axis')
+       .call(yAxis);
+
+
+</script>
+
+</body>
+</html>
