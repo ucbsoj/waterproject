@@ -1,22 +1,35 @@
 .header-third{
-	width: 33%;
+	width: 33.3%;
 	float: left;
 	background-color: #c5c7c6;
+}
+
+.animation-graphic{
 }
 
 #city{
 	border-right: 2px dashed #e0e0e0;
 }
 
+#city:hover{
+	background-color: #e0e0e0;
+}
+
+#washing:hover{
+	background-color: #e0e0e0;
+}
+
 #toilet{
 	border-left: 2px dashed #e0e0e0;
+}
+
+#toilet:hover{
+	background-color: #e0e0e0;
 }
 
 #wishyWashy {
 	margin: 0 33%;
 	width: 34%;
-	padding-top: 6%;
-	padding-bottom: 6%;
 }
 
 #washing:hover #water {
@@ -35,8 +48,6 @@
 #cityLighty {
 	margin: 0 10%;
 	width: 80%;
-	padding-top: 6%;
-	padding-bottom: 6%;
 }
 
 #city:hover #g1{
@@ -94,8 +105,6 @@
 #toiletFlushy {
 	margin: 0 33%;
 	width: 33%;
-	padding-top: 6%;
-	padding-bottom: 6%;
 }
 
 #toilet:hover #flush{
@@ -128,36 +137,40 @@
 	width:100%;
 	height: auto;
 	background-color: #e0e0e0;
-	clear: both;
+	padding-top: 2%;
+	padding-right: 5%;
+	overflow: hidden;
 }
 
 #leaky-pipe {
 	display: inline-block;
 	width: 33%;
+	float:left;
 }
 
 #leaky-text{
-	float:right;
+	float:left;
 	width: 66%;
 }
 
 #leaky-header{
 	color: #ae4425;
-	font-family: Lato, Helvetica, sans-serif;
-	font-size: 45px;
+	font-family: "Oswald", Helvetica, sans-serif;
+	font-size: 60px;
 	text-align: center;
+	margin: 10px;
 }
 
 .leaky-graf{
 	color: #505b51;
-	font-family: Lato, Helvetica, sans-serif;
-	font-size: 14px;
+	font-family: "Open Sans", Helvetica, sans-serif;
+	font-size: 18px;
 }
 
 #leaky-pull{
 	color: #ae4425;
-	font-family: Lato, Helvetica, sans-serif;
-	font-size: 20px;
+	font-family: "Open Sans", Helvetica, sans-serif;
+	font-size: 22px;
 	text-align: center;
 	line-height: 100%;
 	padding: 2%;
