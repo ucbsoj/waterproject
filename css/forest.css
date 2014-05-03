@@ -33,21 +33,28 @@ p {
 	z-index:100;
 }
 #forest-container {
-
 }
 #forest-section1{
-	position:relative;
-	z-index:100;
+}
+#forest1{
+	height:400px;
 }
 #river1{
-	position:absolute;
-	z-index:0;
+
 }
 #forest-section2{
-	position:relative;
 	z-index:100;
 }
+#forest2{
+	height:400px;
+}
 #river2 {
-	position:absolute;
-	z-index:0;
+	z-index:-10;
+}
+#forest-section3{
+	z-index:100;
+}
+#river3 {
+	z-index:-10;
+
 }
