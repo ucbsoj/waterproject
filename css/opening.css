@@ -1,26 +1,32 @@
-#opening .container-fluid:first-child {
+
+
+
+/*** Navbar ***/
+
+.navbar-default{
+    background-color:black;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index: 100000;
+    border:none;
+    border-radius: 0;
+}
+
+.navbar-brand{
+    font-family: "Oswald", "HelveticaNeue-CondensedBlack", Impact, sans-serif;
+}
+
+
+#opening-title-container {
     padding: 0; /*bootstrap override*/
 }
 
-.covers {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh; /* TODO set the height using jquery */
-    z-index: 5;
-    margin-bottom: 50px;
-}
+
 
 #cover-title-1 {
     position: absolute;
-    z-index: 4;
     display:inline-block;
     text-align: center;
     top:50%;
@@ -29,23 +35,35 @@
     border: 0;
     color: white;
     z-index: 10;
+    width: 100%;
 }
 
 #cover-title-1 h1 {
-    margin-bottom: 30px;
-    font-size: 96px;
-    line-height: 98px;
-    font-weight: 200;
+    font-size: 6em;
+    line-height: 1em;
     color: #fff;
     text-shadow: 0 1px 1px rgba(0,0,0,.8);
-    font-smoothing: antialiased;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Sorts Mill Goudy", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
     z-index: 10;
 }
 
-.vimeo {
-    position: absolute;
+#cover-title-1 h3{
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 1em;
+}
+
+#cover-title-1 button{
+    background:none;
+    color: #ddd;
+}
+#cover-title-1 button:hover{
+    background:rbga(100,100,100,0.2);
+    color: white;
+}
+
+#openingvideo {
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -53,15 +71,26 @@
     z-index: 2;
 }
 
-.vimeo iframe{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-}
-
-.videocover{
+#openingvideo{
+    position:relative;
     width:100%;
     height:100%;
 }
+#openingvideo video,
+#openingbackgroundimage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height:100%;
+    width:auto;
+    transform:translate(-50%,-50%);
+}
+@media screen and (min-aspect-ratio: 16/9) { 
+        #openingvideo video,
+        #openingbackgroundimage{
+            height:auto;
+            width:100%;
+        }
+    }
+
 

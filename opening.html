@@ -1,36 +1,112 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <!-- hamburger button for mobile -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#">Running Dry</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="main-navbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Forests</a></li>
+                <li><a href="#">Farms</a></li>
+                <li><a href="#">Factories</a></li>
+                <li><a href="#">Faucets</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+
+
 <!-- place all content withing the container-fluid div -->
-<div class="container-fluid">
+<div class="container-fluid" id="opening-title-container">
     <div class="covers" id="cover-1">
         <div id="cover-title-1">
-            <h1>California's Droughts</h1>
-            <p>Let's dive in to understand some key part of the California drought.</p>
+            <h1>RUNNING DRY</h1>
+            <h3>A look into some of the key elements of the California drought.</h3>
+            <button type="button" class="btn btn-default">View Intro Video</button>
         </div>
-        <div class="vimeo">
-            <div class="videocover">
-                <iframe id="opening_video" src="//player.vimeo.com/video/91003876?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
+        <div id="openingvideo">
+
         </div>
     </div>
 </div>
 <script type="text/javascript">
 jQuery(document).ready(function($){
 
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        
+        $("<img />")
+            .attr('src', 'images/water-poster.jpg')
+            .attr('alt', 'background image of water')
+            .attr('id', 'openingbackgroundimage')
+            .appendTo("#openingvideo");
+        
+        $("#cover-title-1 h1").css("font-size", "4em");
+        $("#cover-title-1 h3").css("font-size", "1em");       
+    } else {
+        $("#openingvideo").jPlayer({
+            ready : function(e){
+                $(this).jPlayer("setMedia", {
+                    m4v    : "images/water.mp4",
+                    ogg    : "images/water.ogv",
+                    poster : "images/water-poster.jpg"
+                }).jPlayer("play");
+
+                if((w_height * 16 / 9) > w_width){
+                    $('#openingvideo video').css({
+                        height : "100%", 
+                        width  : "auto"
+                    });
+                } else {
+                    $('#openingvideo video').css({
+                        height : "auto", 
+                        width  : "100%"
+                    });
+                } 
+
+
+            },
+            waitForLoad: true,
+            loop     : true,
+            size     : {width: "100%", height:"auto"},
+            swfPath  : "images/Jplayer.swf",
+            supplied : "m4v, ogg"
+        });
+    }
+
+
 
     $(window).on('load resize', function(){
         var w_height = $(window).height();
         var w_width  = $(window).width();
 
+        $("#openingvideo").css("height", w_height);
+
+ 
         if((w_height * 16 / 9) > w_width){
-            $('#opening_video').css({
-                height : w_height, 
-                width : (w_height * 16 / 9)
+            $('#openingvideo video').css({
+                height : "100%", 
+                width  : "auto"
             });
         } else {
-            $('#opening_video').css({
-                height : (w_width * 9 / 16), 
-                width : w_width
+            $('#openingvideo video').css({
+                height : "auto", 
+                width  : "100%"
             });
-        }      
+        } 
+
+    
     });
 });
 </script>
