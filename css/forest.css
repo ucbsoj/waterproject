@@ -1,15 +1,18 @@
-video.cover{position:relative;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);height:100%;width:auto;}
+/*video.cover{position:relative;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);height:100%;width:auto;}
 
 iframe.cover{width:100%;height:100%;}
     @media screen and (min-aspect-ratio: 16/9){	
-video.cover{height:auto;width:100%;}}
+video.cover{height:auto;width:100%;}}*/
 		
+#forest-section1{
+}
 .video-frame{
 	height:100%;
 	width:100%;
 }
 
 h2{
+	position: relative;
 	font-family: 'Oswald', sans-serif;
 	font-style:bold;
 	font-size:45px;
