@@ -1,12 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>
+<h1 id="history-headline">Water Storage</h1>
 
-	</title>
-</head>
-<body>
-<p>HISTORY</p>
+<img id="gif" src="water-storage2014.png">
 
-</body>
-</html>
+<p id="history-text">California’s water reservoirs are drying up, and despite a few spats of rain, climatologists say that so far the state’s drought in recent years is the worst on record since recordkeeping began in 1895. Precipitation has been largely hit or miss throughout California, with parts of the Sierra Nevada experiencing one to three inches of rain, while drier parts of the state such as Southern California are getting none. And at present, according to the U.S. Drought Monitor, which monitors arid conditions across the country, more than 90 percent of California is experiencing what’s called “exceptional” and “extreme” drought. Since January, California has received nine inches of rain through the end of April, what state climatologist Michael Anderson calls significantly below normal. That’s following a trend of dry years, with 2013 the driest year on record where less than four inches fell throughout the year. What does that mean for California’s reservoirs? Water storage lakes from the San Francisco Bay, to the Sacramento River, and south to Tulare Lake near Bakersfield could run out of water for livestock and agriculture next year. Drought monitors at the National Drought Mitigation Center based in Lincoln, Ne. say that even with water conservation, just one season of water remains in the state’s reservoirs. And if snowpack is low again next year, experts predict there will be very little water available even for municipal use. “We are in a drought that has elements that are as severe as has been seen in the past 100 years,” said Anderson, the state climatologist for the National Oceanic and Atmospheric Administration. “Impacts are being felt across the state, including some small water systems running out of water.”</p>
+
+
+
+<script>
+$('document').ready(function($) {
+
+        $(function() {
+            var image = new Image();
+            image.src = 'water-storage.gif';
+            $('#gif').click(function() {
+                $(this).attr('src', image.src);
+            });
+
+        	});
+
+        });
+</script>
