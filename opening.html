@@ -44,6 +44,9 @@
 <script type="text/javascript">
 jQuery(document).ready(function($){
 
+    var w_height = $(window).height(),
+        w_width  = $(window).width();
+
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         
         $("<img />")
@@ -88,8 +91,8 @@ jQuery(document).ready(function($){
 
 
     $(window).on('load resize', function(){
-        var w_height = $(window).height();
-        var w_width  = $(window).width();
+        w_height = $(window).height();
+        w_width  = $(window).width();
 
         $("#openingvideo").css("height", w_height);
 

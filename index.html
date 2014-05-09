@@ -11,6 +11,7 @@
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/jquery.jplayer.min.js" type="text/javascript"></script>
     <script src="js/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/skrollr.min.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,300|Oswald:400,700" rel="stylesheet" type="text/css">
     <!--<script src="http://a.vimeocdn.com/js/froogaloop2.min.js" type="text/javascript"></script>-->
     <style type="text/css">
@@ -25,7 +26,7 @@
 
     </style>
     <script>
-
+    var s;
     /*
      *  To create a new section, add the necessary HTML and CSS file names to this variable.
      */
@@ -49,6 +50,13 @@
                 dataType : 'html'
             }).done(function(data){
                 $section.html(data);
+                if(item == sections.length - 1){
+                    // s = skrollr.init({
+                    //     render: function(d){
+                    //         console.log(d)
+                    //     }
+                    // });
+                }
             })
 
             if('css' in elm){
