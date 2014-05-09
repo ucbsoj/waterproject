@@ -9,23 +9,14 @@
 
 #city{
 	border-right: 2px dashed #e0e0e0;
-}
-
-#city:hover{
-	background-color: #e0e0e0;
-}
-
-#washing:hover{
-	background-color: #e0e0e0;
+    z-index: 99999999;
+    background-color: #c5c7c6;
 }
 
 #toilet{
 	border-left: 2px dashed #e0e0e0;
 }
 
-#toilet:hover{
-	background-color: #e0e0e0;
-}
 
 #wishyWashy {
 	margin: 0 33%;
@@ -35,7 +26,7 @@
 #washing:hover #water {
     -webkit-animation: swish 1s infinite;
     -webkit-transform:rotate(45deg);
-    -webkit-transform-origin:98% 145%;
+    -webkit-transform-origin:50% 22%;
 }
 
 @-webkit-keyframes swish
@@ -140,12 +131,14 @@
 	padding-top: 2%;
 	padding-right: 5%;
 	overflow: hidden;
+    display:none;
 }
 
 #leaky-pipe {
 	display: inline-block;
 	width: 33%;
 	float:left;
+    margin-top: 0%;
 }
 
 #leaky-text{
@@ -153,12 +146,12 @@
 	width: 66%;
 }
 
-#leaky-header{
+.leaky-header{
 	color: #ae4425;
 	font-family: "Oswald", Helvetica, sans-serif;
 	font-size: 60px;
 	text-align: center;
-	margin: 10px;
+	margin: 15px;
 }
 
 .leaky-graf{
@@ -174,4 +167,72 @@
 	text-align: center;
 	line-height: 100%;
 	padding: 2%;
+}
+
+#graywater-info {
+    width:100%;
+    height: auto;
+    background-color: #e0e0e0;
+    padding: 2%;
+    overflow: hidden;
+    display:none;
+}
+
+#graywater-text-left {
+    float:left;
+    width: 33%;
+}
+
+#graywater-pipe {
+    display: inline-block;
+    width: 33%;
+    float:left;
+    margin-top: 0%;
+}
+
+.graywater-graf{
+    color: #505b51;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.graywater-pull{
+    color: #ae4425;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-size: 30px;
+    line-height: 120%;
+    padding: 2%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#toilet-info {
+    width:100%;
+    height: auto;
+    background-color: #e0e0e0;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    overflow: hidden;
+    display:none;
+}
+
+#toilet-text {
+    width:66%;
+    height: auto;
+    float: left;
+}
+
+.toilet-graf{
+    color: #505b51;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+#toilet-pull{
+    color: #ae4425;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-size: 30px;
+    line-height: 120%;
+    padding: 2%;
 }

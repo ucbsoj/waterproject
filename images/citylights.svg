@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Your_Icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<defs><style type="text/css" media="screen"><![CDATA[]
+    #g1{
+        -webkit-animation: lights1 1s;
+        -webkit-animation-fill-mode: forwards;
+        fill: #fff;
+    }
+    
+    @-webkit-keyframes lights1
+    {
+        0%   {fill: #fff;}
+		100%  {fill: #EFC820;}
+    }
+
+    #g2{
+    	-webkit-animation: lights2 1s;
+    	-webkit-animation-delay: 1s;
+    	-webkit-animation-fill-mode: forwards;
+    	fill: #fff;
+    }
+    
+    @-webkit-keyframes lights2
+    {
+        0%   {fill: #fff;}
+		100%  {fill: #EFC820;}
+    }
+    
+
+    #g3{
+    	-webkit-animation: lights3 1s;
+    	-webkit-animation-delay: 2s;
+    	-webkit-animation-fill-mode: forwards;
+    	fill: #fff;
+    }
+    
+    @-webkit-keyframes lights3
+    {
+        0%   {fill: #fff;}
+		100%  {fill: #EFC820;}
+    }
+    
+
+    #g4{
+    	-webkit-animation: lights4 1s;
+    	-webkit-animation-delay: 3s;
+    	-webkit-animation-fill-mode: forwards;
+    	fill: #fff;
+    }
+    
+    @-webkit-keyframes lights4
+    {
+        0%   {fill: #fff;}
+		100%  {fill: #EFC820;}
+    }
+    
+    
+]]></style>
+</defs>
+<g>
+	<path fill="#4B574D" d="M2.075,87.828h18.397V47.354H2.075V87.828z M13.113,54.716h3.68v3.677h-3.68V54.716z M13.113,62.073h3.68
+		v3.679h-3.68V62.073z M13.113,69.432h3.68v3.68h-3.68V69.432z M13.113,76.79h3.68v3.68h-3.68V76.79z M5.753,54.716h3.68v3.677
+		h-3.68V54.716z M5.753,62.073h3.68v3.679h-3.68V62.073z M5.753,69.432h3.68v3.68h-3.68V69.432z M5.753,76.79h3.68v3.68h-3.68V76.79
+		z"/>
+	<path fill="#4B574D" d="M79.911,54.801v33.027h18.397V54.801H79.911z M87.271,80.561h-3.681v-3.682h3.681V80.561z M87.271,73.199
+		h-3.681v-3.678h3.681V73.199z M87.271,65.841h-3.681v-3.679h3.681V65.841z M94.627,80.561H90.95v-3.682h3.677V80.561z
+		 M94.627,73.199H90.95v-3.678h3.677V73.199z M94.627,65.841H90.95v-3.679h3.677V65.841z"/>
+	<path fill="#4B574D" d="M73.307,13.855h-8.39L58.871,12v39.368v1.104v35.381h18.396V52.473v-1.104V17.645l-3.963-1.216v-2.574
+		H73.307z M66.23,80.495H62.55v-3.681h3.681V80.495z M66.23,73.137H62.55v-3.68h3.681V73.137z M66.23,65.775H62.55v-3.678h3.681
+		V65.775z M66.23,58.419H62.55v-3.68h3.681V58.419z M66.23,50.76H62.55v-3.68h3.681V50.76z M66.23,43.401H62.55v-3.679h3.681V43.401
+		z M66.23,36.042H62.55v-3.68h3.681V36.042z M73.59,80.495h-3.681v-3.681h3.681V80.495z M66.23,28.683H62.55v-3.679h3.681V28.683z
+		 M73.59,73.137h-3.681v-3.68h3.681V73.137z M73.59,65.775h-3.681v-3.678h3.681V65.775z M73.59,58.419h-3.681v-3.68h3.681V58.419z
+		 M73.59,50.76h-3.681v-3.68h3.681V50.76z M73.59,43.401h-3.681v-3.679h3.681V43.401z M73.59,36.042h-3.681v-3.68h3.681V36.042z
+		 M73.59,25.004v3.679h-3.681v-3.679H73.59z"/>
+	<path fill="#4B574D" d="M48.87,54.756v-10.94l-3.679-7.358h-3.68V32.11h-3.679v4.348h-3.687l-3.672,7.358v10.94h-3.68l-3.68,3.776
+		V87.97h33.116V58.532l-3.68-3.776H48.87z M41.511,43.815h3.68v3.68h-3.68V43.815z M34.153,43.815h3.679v3.68h-3.679V43.815z
+		 M34.153,80.611h-3.68v-3.68h3.68V80.611z M34.153,73.252h-3.68v-3.679h3.68V73.252z M34.153,65.895h-3.68v-3.682h3.68V65.895z
+		 M34.153,51.175h3.679v3.679h-3.679V51.175z M41.511,80.611h-3.679v-3.68h3.679V80.611z M41.511,73.252h-3.679v-3.679h3.679V73.252
+		z M41.511,65.895h-3.679v-3.682h3.679V65.895z M41.511,51.175h3.68v3.679h-3.68V51.175z M48.87,80.611h-3.679v-3.68h3.679V80.611z
+		 M48.87,73.252h-3.679v-3.679h3.679V73.252z M48.87,65.895h-3.679v-3.682h3.679V65.895z"/>
+	<path fill="#4B574D" d="M27.839,51.271v-1.312h-1.776V46.28h1.776v-3.23l0.227-0.452h-2.003v-3.679h3.838l0.021,0.001l3.155-6.323
+		l0.503-1.007v-7.707L15.025,28.32v16.5h8.079v9.85l3.363-3.4h1.372V51.271z M26.063,31.56h3.679v3.68h-3.679V31.56z M22.384,42.599
+		h-3.679V38.92h3.679V42.599z M22.384,35.24h-3.679v-3.68h3.679V35.24z"/>
+</g>
+
+<rect id="g1" x="62.506" y="24.967" fill="#fff" width="3.764" height="3.763"/>
+<rect id="g1" x="69.881" y="32.342" fill="#fff" width="3.764" height="3.763"/>
+<rect id="g2" x="69.881" y="54.67" fill="#fff" width="3.764" height="3.763"/>
+<rect id="g4" x="69.881" y="39.758" fill="#fff" width="3.764" height="3.763"/>
+<rect id="g3" x="62.506" y="47.003" fill="#fff" width="3.764" height="3.762"/>
+<rect id="g4" x="62.506" y="76.841" fill="#fff" width="3.764" height="3.763"/>
+<rect id="g4" x="62.506" y="69.433" fill="#fff" width="3.764" height="3.763"/>
+<rect id="g2" x="41.464" y="51.039" fill="#fff" width="3.764" height="3.762"/>
+<rect id="g2" x="37.789" y="62.176" fill="#fff" width="3.764" height="3.762"/>
+<rect id="g3" x="30.547" y="69.434" fill="#fff" width="3.764" height="3.762"/>
+<rect id="g1" x="37.7" y="69.434" fill="#fff" width="3.764" height="3.763"/>
+<rect id="g1" x="45.228" y="76.84" fill="#fff" width="3.764" height="3.764"/>
+<rect id="g4" x="18.59" y="38.925" fill="#fff" width="3.764" height="3.763"/>
+<rect id="g4" x="5.714" y="69.434" fill="#fff" width="3.764" height="3.762"/>
+<rect id="g2" x="83.547" y="62.176" fill="#fff" width="3.764" height="3.762"/>
+<rect id="g1" x="83.547" y="69.433" fill="#fff" width="3.764" height="3.763"/>
+<rect id="g3" x="90.964" y="76.84" fill="#fff" width="3.764" height="3.764"/>
+<rect id="g3" x="26.048" y="31.509" fill="#fff" width="3.764" height="3.763"/>
+<rect id="g2" x="13.143" y="54.67" fill="#fff" width="3.764" height="3.763"/>
+</svg>
